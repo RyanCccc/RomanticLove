@@ -1,0 +1,94 @@
+
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Love Baby</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="default_dev.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="min.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 我看到了人人上那条状态, </span><br />
+				<span class="space"/><span class="comments">* 说是程序员秀恩爱神马的, </span><br />
+				<span class="space"/><span class="comments">* 那俺也来随便写一个.</span><br />
+				<span class="space"/><span class="comments">*/</span><br>
+				Boy I = <span class="keyword">new</span> Boy(<span class="string">"猴子"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"文文"</span>);<br />
+				Dinner meal = <span class="keyword">NULL</span>;<br>
+				<span class="keyword">while</span> (meal == <span class="keyword">NULL</span>){ <br>
+				<span class="placeholder"/>I.coding();<br>
+				<span class="placeholder"/>meal=u.cooking();<br>
+				}<br>
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 纯属娱乐， </span><br />
+				<span class="space"/><span class="comments">* 其实主要目的是测试右边的花花， </span><br />
+				<span class="space"/><span class="comments">* 不过..但愿老婆大人看不懂上面的代码.. </span><br />
+				<span class="space"/><span class="comments">*/</span>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						<div id="elapseClock"><br></div>
+					</div>
+					<br>
+					<div id="loveu">
+						To my love, Cherry<br/>
+						<div class="signature">- RyanC</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://love.hackerzhou.me/">love.hackerzhou.me</a>&#38;<a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyleft © <a href='http://blahgeek.com'>blahgeek.com</a> 2011-2013
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var nolovetime = new Date();
+		nolovetime.setFullYear(2012, 7, 10);
+		nolovetime.setHours(0);
+		nolovetime.setMinutes(0);
+		nolovetime.setSeconds(0);
+		nolovetime.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+
+			timeElapse(nolovetime);
+			setInterval(function () {
+				timeElapse(nolovetime);
+			}, 100);
+
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 100);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
